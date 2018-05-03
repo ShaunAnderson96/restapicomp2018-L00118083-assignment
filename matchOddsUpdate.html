@@ -1,0 +1,59 @@
+<html>
+<head>
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script> 
+  <script type="text/javascript" src="underscore.js"></script> 
+  <script type="text/javascript" src="mustache.js"></script>
+  <script src="matchOddsUpdate.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="teams.html">Teams</a> |
+    <a href="groups.html">Groups</a> |
+    <a href="filterMatches.html">Filter Matches</a> |
+    <a href="matchesInPlay.html">Matches in Play</a> |
+    <a href="matchOddsUpdate.html">Match Odds Update</a> |
+    <a href="teams.html">Group of Death Visual</a> |
+    <a href="teams.html">Match Odds Visual</a> 
+</nav>
+<hr>
+<h1 id = "header">Match Odds Update [jQuery & Mustache]</h1>
+<script id="template" type="text/template">
+    <table border =1>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Stage</th>
+            <th></th>
+            <th>Team 1</th>
+            <th>1</th>
+            <th>X</th>
+            <th>2</th>
+            <th>Team2</th>
+            <th></th>
+            <th>Predicition</th>
+        </tr>
+        {{#musData}}
+        <tr>
+            <td>{{Date}}</td>
+            <td>{{Time}}</td>
+            <td>{{description}}</td>
+            <td><img src="images/{{team1short}}" width="40" height= "20"></td>
+            <td>{{Team1}} ({{short1}})</td>
+            <!-- <td><button  style="background-color: #99cc00; width: 100px;">{{Team1Win}}</button></td> -->
+            <td><input width ="50px" value="{{Team1Win}}"></input></td>
+            <td><input value="{{Draw}}"></input></td>
+            <td><input value="{{Team2Win}}"></input></td>
+            <td>{{Team2}} ({{short2}})</td>
+            <td><img src="images/{{team2short}}" width="40" height= "20"></td>
+            <td>{{Prediction}}</td>
+        </tr>
+        {{/musData}}
+    </table>
+</script>
+
+<div id="table" style="border: 1px;"></div>
+
+<hr>
+<footer style="text-align:center;margin-top:2px">Shaun Anderson | L00118083 &copy; 2018</footer>
+</body>
+</html>

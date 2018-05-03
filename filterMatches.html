@@ -1,0 +1,64 @@
+<html>
+<head>
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script> 
+  <script type="text/javascript" src="underscore.js"></script> 
+  <script type="text/javascript" src="mustache.js"></script>
+  <script src="filterMatches.js"></script>
+
+</head>
+
+<body>
+  <nav>
+    <a href="teams.html">Teams</a> |
+    <a href="groups.html">Groups</a> |
+    <a href="filterMatches.html">Filter Matches</a> |
+    <a href="matchesInPlay.html">Matches in Play</a> |
+    <a href="matchOddsUpdate.html">Match Odds Update</a> |
+    <a href="teams.html">Group of Death Visual</a> |
+    <a href="teams.html">Match Odds Visual</a> 
+</nav>
+<hr>
+<h1 id = "header">Filter Matches [jQuery & UnderScore & Mustache]</h1>
+Stage:
+<select id="stage"><option id="option" value="All">All..</option></select>
+Team:
+<select id="team"><option id="option" value="All">All..</option></select>
+<hr>
+<script id="template" type="text/template">
+  <table border=1>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Stage</th>
+        <th></th>
+        <th>Team1</th>
+        <th>1</th>
+        <th>X</th>
+        <th>2</th>
+        <th>Team2</th>
+        <th></th>
+        <th>Predicition</th>
+      </tr>
+  {{#musData}}
+      <tr>
+          <td>{{date}}</td>
+          <td>{{time}}</td>
+          <td>{{stage}}</td>
+          <td><img style="width: 40px; height: 20px;" src="images/{{team1img}}"></td>
+          <td>{{team1}} ({{team1short}})</td>
+          <td>{{team1win}}</td>
+          <td>{{draw}}</td>
+          <td>{{team2win}}</td>
+          <td>{{team2}} ({{team2short}})</td>
+          <td><img style="width: 40px; height: 20px;" src="images/{{team2img}}"></td>
+          <td>{{predicition}}</td>
+      </tr>
+  {{/musData}}
+  </table>
+</script>
+<div id="table" style="border: 1px;"></div>
+
+<hr>
+<footer style="text-align:center;margin-top:2px">Shaun Anderson | L00118083 &copy; 2018</footer>
+</body>
+</html>

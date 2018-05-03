@@ -1,0 +1,64 @@
+<html>
+<head>
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script> 
+  <script type="text/javascript" src="underscore.js"></script> 
+  <script type="text/javascript" src="mustache.js"></script>
+  <script src="teams.js"></script>
+
+</head>
+ <!-- <script id="teamTemplate" type="text/template">
+  11 {{#teams}}
+  12 <tr>
+  13     <td>Team Stage: {{stage}}</td>        
+  14     <td>Name: {{name}}</td>
+  15     <td>County: {{county}}</td>  
+  16     <br>      
+  17 </tr>
+  18 {{/teams}}
+  19 </script> -->
+<body>
+  <nav>
+    <a href="teams.html">Teams</a> |
+    <a href="groups.html">Groups</a> |
+    <a href="filterMatches.html">Filter Matches</a> |
+    <a href="matchesInPlay.html">Matches in Play</a> |
+    <a href="matchOddsUpdate.html">Match Odds Update</a> |
+    <a href="teams.html">Group of Death Visual</a> |
+    <a href="teams.html">Match Odds Visual</a> 
+
+</nav>
+<hr>
+<h1 id = "header">Teams [jQuery & Mustache]</h1>
+<hr>
+<script id="template" type="text/template">
+<div>
+<table border = 1>
+        <thead>
+         <tr>
+          <th>Group</th>
+          <th></th>
+          <th>Name</th>
+          <th>Outright</th>
+          <th>FIFA Rankings</th>
+         </tr>
+        </thead>
+
+        <tbody id="table">
+          {{#teams}}
+          <tr>
+            <td>{{Stage}}</td>
+            <td><img src="images/{{Img}}" style="width: 40px;height: 20px"></td>
+            <td>{{Name}} ({{Code}})</td>
+            <td>{{OverallOdds}}</td>
+            <td>{{FIFARankings}}</td>
+          </tr>
+          {{/teams}}
+        </tbody>
+       </table>
+      </div>
+  </script>
+  <div id="content"></div>
+<hr>
+<footer style="text-align:center;margin-top:2px">Shaun Anderson | L00118083 &copy; 2018</footer>
+</body>
+</html>
