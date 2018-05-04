@@ -5,6 +5,15 @@ $(document).ready(function(){
         var arr = [];
         // location.reload();
          setInterval(displayData, 5000);
+         setTimeout(displayData, 1000);
+        //  $('#btn').on('change', function() {
+        //     $('#btn').css('background', 'red');
+        //   }); 
+        // $("#btn1").on('change', function() {
+        //     // $("#myform").data("changed",true);
+        //     $('#btn1').css('background-color', 'blue');
+        //  });
+      
     };
 
         function displayData() {
