@@ -1,8 +1,6 @@
 $('document').ready(function(){
 
-        var url = 'getTeamGroups.php';
-       
-        $.getJSON(url, function(data){
+        $.getJSON('getTeamGroups.php', function(data){
             var a = _.where(data, {"Stage" : "A"});
                  _.each(a, function(d){
                     $('#groupA').append('<tr>');

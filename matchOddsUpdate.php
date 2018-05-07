@@ -44,7 +44,7 @@
 
     <?php
         while($row = mysqli_fetch_array($data)) {
-            echo "<tr><form action= updateOdds.php method=post>";
+            echo"<tr><form action= updateOdds.php method=post>";
             echo "<td>". $row['Date']."</td>";
             echo "<td>". $row['Time']."</td>";
             echo "<td>". $row['Stage']."</td>";
